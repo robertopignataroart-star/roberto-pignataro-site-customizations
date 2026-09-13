@@ -216,6 +216,11 @@ body,
    ========================================================= */
 
 .rlp-biography-toc {
+  clear: both !important;
+  display: block !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: none !important;
   margin: 55px 0 65px;
   padding: 28px 32px;
   background: var(--rlp-gray-field);
