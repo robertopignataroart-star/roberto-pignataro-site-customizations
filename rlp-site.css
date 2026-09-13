@@ -97,6 +97,10 @@ body,
 #page p.rlp-section-divider {
   font-family: "futura-pt", Futura, "Century Gothic", sans-serif !important;
   color: var(--rlp-orange) !important;
+  margin-top: 3.5rem !important;
+  margin-bottom: 3.5rem !important;
+  padding: 0 !important;
+  line-height: 1 !important;
 }
 
 #page .sqs-html-content p > strong:first-child {
@@ -156,7 +160,7 @@ body,
 
 [id="block-yui_3_17_2_1_1622836638427_10986"]
 .summary-item + .summary-item {
-  padding-top: 10px !important;
+  padding-top: 0 !important;
 }
 
 [id="block-yui_3_17_2_1_1622836638427_10986"]
@@ -657,5 +661,19 @@ body,
   .rlp-biography-toc ol,
   .rlp-article-toc ol {
     columns: 1;
+  }
+}
+
+
+/* =========================================================
+   ARTICLE INDEX CANVAS ALIGNMENT
+   JS supplies the lead-photo width and horizontal offset.
+   ========================================================= */
+
+@media screen and (min-width: 641px) {
+  .rlp-florida-lavalle-page .rlp-article-toc.rlp-toc-photo-width {
+    width: var(--rlp-toc-photo-width, 100%) !important;
+    margin-left: var(--rlp-toc-photo-offset, 0) !important;
+    margin-right: 0 !important;
   }
 }
