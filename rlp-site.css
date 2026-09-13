@@ -787,3 +787,12 @@ body.rlp-florida-lavalle-page #page
   background: #e94712 !important;
   border-color: #e94712 !important;
 }
+
+
+/* Balance the divider between the lead-image caption and article index.
+   Avenue contributes 46px from adjoining block padding above it. */
+body.rlp-florida-lavalle-page #page
+p.rlp-section-divider.rlp-divider-before-toc {
+  margin-top: 10px !important;
+  margin-bottom: 56px !important;
+}
