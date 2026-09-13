@@ -349,18 +349,22 @@ body,
   box-sizing: border-box !important;
   min-width: 44px !important;
   min-height: 44px !important;
-  background-color: var(--rlp-orange-light) !important;
-  border: 1px solid rgba(255, 90, 36, 0.45) !important;
-  border-radius: 2px !important;
-  color: #222222 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: var(--rlp-orange) !important;
+  border: 1px solid var(--rlp-orange) !important;
+  border-radius: 0 !important;
+  color: #ffffff !important;
+  line-height: 1 !important;
   opacity: 1 !important;
   background-position: center center !important;
 }
 
 .rlp-florida-lavalle-page .sqs-gallery-controls .previous:hover,
 .rlp-florida-lavalle-page .sqs-gallery-controls .next:hover {
-  background-color: var(--rlp-orange) !important;
-  border-color: var(--rlp-orange) !important;
+  background-color: #e84616 !important;
+  border-color: #e84616 !important;
 }
 
 .rlp-florida-lavalle-page .sqs-gallery-controls .previous:focus-visible,
@@ -722,4 +726,13 @@ body,
     --rlp-toc-padding-x: 24px;
     --rlp-toc-padding-y: 22px;
   }
+}
+
+
+.rlp-florida-lavalle-page .sqs-gallery-controls .previous::before,
+.rlp-florida-lavalle-page .sqs-gallery-controls .next::before,
+.rlp-florida-lavalle-page .sqs-gallery-block-slideshow .previous::before,
+.rlp-florida-lavalle-page .sqs-gallery-block-slideshow .next::before {
+  color: #ffffff !important;
+  line-height: 1 !important;
 }
