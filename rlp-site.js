@@ -80,7 +80,7 @@
     });
 
     var contents = document.createElement("details");
-    contents.className = "rlp-biography-toc";
+    contents.className = "rlp-toc rlp-biography-toc";
 
     var summary = document.createElement("summary");
     summary.textContent = "In this biography";
@@ -187,7 +187,7 @@
     });
 
     var contents = document.createElement("details");
-    contents.className = "rlp-article-toc";
+    contents.className = "rlp-toc rlp-article-toc";
 
     var summary = document.createElement("summary");
     summary.textContent = "In this article";
