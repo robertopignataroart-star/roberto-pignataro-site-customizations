@@ -273,7 +273,7 @@
 
       return (
         rect.width > 0 &&
-        rect.bottom <= contentsRect.top + window.pageYOffset + 20
+        rect.bottom <= contentsRect.top + 20
       );
     });
 
