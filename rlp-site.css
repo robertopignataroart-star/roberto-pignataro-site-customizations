@@ -736,3 +736,54 @@ body,
   color: #ffffff !important;
   line-height: 1 !important;
 }
+
+
+/* =========================================================
+   FLORIDA GALLERY CONTROLS — AVENUE OVERRIDE
+   Must override Avenue's higher-specificity background shorthand.
+   ========================================================= */
+
+body.rlp-florida-lavalle-page #page
+.sqs-gallery-block .sqs-gallery-controls a.previous,
+body.rlp-florida-lavalle-page #page
+.sqs-gallery-block .sqs-gallery-controls a.next,
+body.rlp-florida-lavalle-page #page
+.sqs-gallery-block-slideshow a.previous,
+body.rlp-florida-lavalle-page #page
+.sqs-gallery-block-slideshow a.next {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
+  background: var(--rlp-orange) !important;
+  border: 1px solid var(--rlp-orange) !important;
+  border-radius: 0 !important;
+  color: #ffffff !important;
+  line-height: 1 !important;
+  opacity: 1 !important;
+}
+
+body.rlp-florida-lavalle-page #page
+.sqs-gallery-block .sqs-gallery-controls a.previous::before,
+body.rlp-florida-lavalle-page #page
+.sqs-gallery-block .sqs-gallery-controls a.next::before,
+body.rlp-florida-lavalle-page #page
+.sqs-gallery-block-slideshow a.previous::before,
+body.rlp-florida-lavalle-page #page
+.sqs-gallery-block-slideshow a.next::before {
+  color: #ffffff !important;
+}
+
+body.rlp-florida-lavalle-page #page
+.sqs-gallery-block .sqs-gallery-controls a.previous:hover,
+body.rlp-florida-lavalle-page #page
+.sqs-gallery-block .sqs-gallery-controls a.next:hover,
+body.rlp-florida-lavalle-page #page
+.sqs-gallery-block-slideshow a.previous:hover,
+body.rlp-florida-lavalle-page #page
+.sqs-gallery-block-slideshow a.next:hover {
+  background: #e94712 !important;
+  border-color: #e94712 !important;
+}
