@@ -510,3 +510,152 @@ body,
     columns: 1;
   }
 }
+
+
+/* =========================================================
+   SHARED GENERATED INDEX COMPONENT
+   Biography, articles, and future long-form indexes
+   ========================================================= */
+
+.rlp-toc,
+.rlp-biography-toc,
+.rlp-article-toc {
+  clear: both !important;
+  display: flow-root !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: none !important;
+  overflow: hidden !important;
+  margin: 55px 0 65px !important;
+  padding: 28px 32px !important;
+  background: var(--rlp-gray-field) !important;
+  border: 0 !important;
+  border-left: 4px solid var(--rlp-orange) !important;
+}
+
+.rlp-toc summary,
+.rlp-biography-toc summary,
+.rlp-article-toc summary {
+  position: relative;
+  box-sizing: border-box;
+  min-height: 44px;
+  padding: 7px 8px 7px 24px;
+  color: #222222;
+  font-family: "futura-pt", Futura, "Century Gothic", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-transform: lowercase;
+  cursor: pointer;
+  list-style: none;
+}
+
+.rlp-toc summary::-webkit-details-marker,
+.rlp-biography-toc summary::-webkit-details-marker,
+.rlp-article-toc summary::-webkit-details-marker {
+  display: none;
+}
+
+.rlp-toc summary::before,
+.rlp-biography-toc summary::before,
+.rlp-article-toc summary::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 9px solid var(--rlp-orange);
+  transform: translateY(-50%);
+}
+
+.rlp-toc[open] summary::before,
+.rlp-biography-toc[open] summary::before,
+.rlp-article-toc[open] summary::before {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.rlp-toc summary:focus-visible,
+.rlp-toc a:focus-visible,
+.rlp-biography-toc summary:focus-visible,
+.rlp-biography-toc a:focus-visible,
+.rlp-article-toc summary:focus-visible,
+.rlp-article-toc a:focus-visible {
+  outline: 3px solid rgba(255, 90, 36, 0.45);
+  outline-offset: 3px;
+}
+
+.rlp-toc ol,
+.rlp-biography-toc ol,
+.rlp-article-toc ol {
+  columns: 2;
+  column-gap: 52px;
+  counter-reset: rlp-index-section;
+  margin: 24px 0 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.rlp-toc li,
+.rlp-biography-toc li,
+.rlp-article-toc li {
+  display: grid !important;
+  grid-template-columns: 2rem minmax(0, 1fr) !important;
+  column-gap: 12px !important;
+  align-items: baseline !important;
+  break-inside: avoid;
+  counter-increment: rlp-index-section;
+  margin: 0 0 16px !important;
+  padding: 0 !important;
+  line-height: 1.45 !important;
+}
+
+.rlp-toc li::before,
+.rlp-biography-toc li::before,
+.rlp-article-toc li::before {
+  content: counter(rlp-index-section, decimal-leading-zero);
+  position: static !important;
+  display: block;
+  width: auto !important;
+  color: var(--rlp-orange);
+  font-family: "futura-pt", Futura, "Century Gothic", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: inherit;
+  font-variant-numeric: tabular-nums;
+}
+
+.rlp-toc a,
+.rlp-biography-toc a,
+.rlp-article-toc a {
+  display: block !important;
+  min-width: 0;
+  color: var(--rlp-ink);
+  font-family: "futura-pt", Futura, "Century Gothic", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: inherit;
+  text-decoration: none;
+}
+
+.rlp-toc a:hover,
+.rlp-biography-toc a:hover,
+.rlp-article-toc a:hover {
+  color: var(--rlp-orange);
+}
+
+@media screen and (max-width: 640px) {
+  .rlp-toc,
+  .rlp-biography-toc,
+  .rlp-article-toc {
+    margin: 40px 0 50px !important;
+    padding: 22px 24px !important;
+    border-left-width: 3px !important;
+  }
+
+  .rlp-toc ol,
+  .rlp-biography-toc ol,
+  .rlp-article-toc ol {
+    columns: 1;
+  }
+}
