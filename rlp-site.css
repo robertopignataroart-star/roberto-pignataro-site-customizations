@@ -1,0 +1,387 @@
+/* Roberto Pignataro — Squarespace 7.0 custom layer */
+
+:root {
+  --rlp-orange: #ff5a24;
+  --rlp-orange-light: #fff0ea;
+  --rlp-ink: #333333;
+  --rlp-gray-field: #f4f4f2;
+}
+
+
+/* =========================================================
+   GRID GALLERIES
+   ========================================================= */
+
+.sqs-gallery-block-grid.sqs-gallery-block-meta-only-title
+.margin-wrapper .image-slide-title {
+  display: block !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: initial !important;
+  max-height: none !important;
+  height: auto !important;
+  -webkit-line-clamp: unset !important;
+  line-height: 1.3;
+}
+
+
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+
+body,
+#page,
+#footer,
+#page p,
+#page li,
+#page blockquote,
+#page .summary-excerpt,
+#page .summary-metadata,
+#page .image-caption-wrapper,
+#page .image-slide-description,
+#footer {
+  font-family: "futura-pt", Futura, "Century Gothic", sans-serif !important;
+}
+
+#page p,
+#page li,
+#page blockquote {
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: 0;
+}
+
+#logo,
+#logo a,
+.site-title,
+.site-title a,
+.logo-subtitle,
+#page h1,
+#page h2,
+#page h3,
+#page h4,
+#page h5,
+#page h6,
+#page .entry-title,
+#page .entry-title a,
+#page .summary-title,
+#page .summary-title a,
+#page .summary-heading,
+#page .project-title,
+#page .image-slide-title {
+  font-family: "futura-pt", Futura, "Century Gothic", sans-serif !important;
+}
+
+
+/* Navigation remains Futura */
+
+#topNav,
+#topNav a,
+#topNav .folder-toggle-label,
+#mobileMenuLink,
+#mobileMenuLink a,
+#mobileNav,
+#mobileNav a,
+#mobileNav .folder-toggle-label,
+#categoryNav,
+#categoryNav a,
+#categoryNav .category-nav-toggle-label {
+  font-family: "futura-pt", Futura, "Century Gothic", sans-serif !important;
+}
+
+
+/* =========================================================
+   ARTICLE DETAILS
+   ========================================================= */
+
+#page p.rlp-section-divider {
+  font-family: "futura-pt", Futura, "Century Gothic", sans-serif !important;
+  color: var(--rlp-orange) !important;
+}
+
+#page .sqs-html-content p > strong:first-child {
+  font-family: "futura-pt", Futura, "Century Gothic", sans-serif !important;
+  font-weight: 700 !important;
+}
+
+#page .summary-excerpt,
+#page .summary-excerpt p {
+  font-family: "futura-pt", Futura, "Century Gothic", sans-serif !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+  letter-spacing: 0 !important;
+}
+
+
+/* =========================================================
+   LATEST BLOG POSTS
+   ========================================================= */
+
+[id="block-yui_3_17_2_1_1622836638427_10986"] .summary-title,
+[id="block-yui_3_17_2_1_1622836638427_10986"] .summary-title-link {
+  font-family: "futura-pt", Futura, "Century Gothic", sans-serif !important;
+  font-weight: 700 !important;
+  text-transform: lowercase !important;
+  color: var(--rlp-ink) !important;
+}
+
+[id="block-yui_3_17_2_1_1622836638427_10986"] .summary-item {
+  display: flow-root;
+}
+
+[id="block-yui_3_17_2_1_1622836638427_10986"]
+.summary-item:not(:last-child) {
+  position: relative;
+  padding-bottom: 50px !important;
+  margin-bottom: 50px !important;
+}
+
+[id="block-yui_3_17_2_1_1622836638427_10986"]
+.summary-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 15%;
+  bottom: 0;
+  width: 70%;
+  height: 3px;
+  background-image: radial-gradient(
+    circle,
+    #b8b8b8 1px,
+    transparent 1.4px
+  );
+  background-size: 7px 3px;
+  background-repeat: repeat-x;
+  background-position: center;
+}
+
+[id="block-yui_3_17_2_1_1622836638427_10986"]
+.summary-item + .summary-item {
+  padding-top: 10px !important;
+}
+
+[id="block-yui_3_17_2_1_1622836638427_10986"]
+.summary-read-more-link {
+  font-family: "futura-pt", Futura, "Century Gothic", sans-serif !important;
+  font-size: 0 !important;
+  color: #222222 !important;
+  text-decoration: none !important;
+}
+
+[id="block-yui_3_17_2_1_1622836638427_10986"]
+.summary-read-more-link::before {
+  content: "Read more";
+  font-family: "futura-pt", Futura, "Century Gothic", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+[id="block-yui_3_17_2_1_1622836638427_10986"]
+.summary-read-more-link::after {
+  content: "";
+  display: inline-block;
+  margin-left: 10px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 8px solid var(--rlp-orange);
+  vertical-align: middle;
+  transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   ARTICLE QUOTES
+   ========================================================= */
+
+#page .sqs-html-content blockquote {
+  margin: 2.5em 0;
+  padding: 30px 40px;
+  background: var(--rlp-gray-field);
+  border: 0;
+  border-left: 4px solid var(--rlp-orange);
+  color: #222222;
+  font-family: "futura-pt", Futura, "Century Gothic", sans-serif !important;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.65;
+}
+
+#page .sqs-html-content blockquote p {
+  margin: 0;
+  font-style: italic;
+}
+
+
+/* =========================================================
+   BIOGRAPHY TABLE OF CONTENTS
+   ========================================================= */
+
+.rlp-biography-toc {
+  margin: 55px 0 65px;
+  padding: 28px 32px;
+  background: var(--rlp-gray-field);
+  border-left: 4px solid var(--rlp-orange);
+}
+
+.rlp-biography-toc summary {
+  position: relative;
+  box-sizing: border-box;
+  min-height: 44px;
+  padding: 8px 8px 8px 20px;
+  color: #222222;
+  font-family: "futura-pt", Futura, "Century Gothic", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: lowercase;
+  cursor: pointer;
+  list-style: none;
+}
+
+.rlp-biography-toc summary::-webkit-details-marker {
+  display: none;
+}
+
+.rlp-biography-toc summary::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 8px solid var(--rlp-orange);
+  transform: translateY(-50%);
+}
+
+.rlp-biography-toc[open] summary::before {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.rlp-biography-toc summary:focus-visible,
+.rlp-biography-toc a:focus-visible {
+  outline: 3px solid rgba(255, 90, 36, 0.45);
+  outline-offset: 3px;
+}
+
+.rlp-biography-toc ol {
+  columns: 2;
+  column-gap: 45px;
+  counter-reset: biography-section;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rlp-biography-toc li {
+  position: relative;
+  break-inside: avoid;
+  counter-increment: biography-section;
+  margin: 0 0 12px;
+  padding-left: 34px;
+  line-height: 1.4;
+}
+
+.rlp-biography-toc li::before {
+  content: counter(biography-section, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0.12em;
+  width: 24px;
+  color: var(--rlp-orange);
+  font-family: "futura-pt", Futura, "Century Gothic", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.rlp-biography-toc a {
+  color: var(--rlp-ink);
+  font-family: "futura-pt", Futura, "Century Gothic", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.rlp-biography-toc a:hover {
+  color: var(--rlp-orange);
+}
+
+#page h3.rlp-biography-section {
+  scroll-margin-top: 40px;
+}
+
+
+/* =========================================================
+   FLORIDA Y LAVALLE EXPERIMENT
+   ========================================================= */
+
+.rlp-florida-lavalle-page .rlp-reading-progress {
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 4px;
+  pointer-events: none;
+  background: transparent;
+}
+
+.rlp-florida-lavalle-page .rlp-reading-progress-bar {
+  width: 0;
+  height: 100%;
+  background: var(--rlp-orange);
+  transform-origin: left center;
+}
+
+.rlp-florida-lavalle-page .sqs-gallery-controls .previous,
+.rlp-florida-lavalle-page .sqs-gallery-controls .next,
+.rlp-florida-lavalle-page .sqs-gallery-block-slideshow .previous,
+.rlp-florida-lavalle-page .sqs-gallery-block-slideshow .next {
+  box-sizing: border-box !important;
+  width: 44px !important;
+  height: 44px !important;
+  padding: 0 !important;
+  background-color: var(--rlp-orange-light) !important;
+  border: 1px solid rgba(255, 90, 36, 0.3) !important;
+  border-radius: 50% !important;
+  color: #222222 !important;
+  opacity: 1 !important;
+}
+
+.rlp-florida-lavalle-page .sqs-gallery-controls .previous:hover,
+.rlp-florida-lavalle-page .sqs-gallery-controls .next:hover {
+  background-color: var(--rlp-orange) !important;
+  border-color: var(--rlp-orange) !important;
+}
+
+.rlp-florida-lavalle-page .sqs-gallery-controls .previous:focus-visible,
+.rlp-florida-lavalle-page .sqs-gallery-controls .next:focus-visible {
+  outline: 3px solid rgba(255, 90, 36, 0.45) !important;
+  outline-offset: 3px !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE AND REDUCED MOTION
+   ========================================================= */
+
+@media screen and (max-width: 640px) {
+  #page .sqs-html-content blockquote {
+    padding: 22px 24px;
+    border-left-width: 3px;
+  }
+
+  .rlp-biography-toc {
+    margin: 40px 0 50px;
+    padding: 22px 24px;
+    border-left-width: 3px;
+  }
+
+  .rlp-biography-toc ol {
+    columns: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+}
