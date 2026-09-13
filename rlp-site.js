@@ -254,6 +254,17 @@
   function fitFloridaContentsToLeadPhoto() {
     var contents = document.querySelector(".rlp-article-toc");
 
+    if (contents) {
+      var precedingDivider = contents.previousElementSibling;
+
+      if (
+        precedingDivider &&
+        precedingDivider.classList.contains("rlp-section-divider")
+      ) {
+        precedingDivider.classList.add("rlp-divider-before-toc");
+      }
+    }
+
     if (!contents || window.matchMedia("(max-width: 640px)").matches) {
       if (contents) {
         contents.classList.remove("rlp-toc-photo-width");
