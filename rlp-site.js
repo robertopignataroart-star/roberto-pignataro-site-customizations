@@ -274,45 +274,47 @@
       return;
     }
 
-    var contentsRect = contents.getBoundingClientRect();
+    /*
+     * Measure the visible photograph itself, not Squarespace's padded
+     * image block. Use the TOC's parent content column as the stable
+     * origin so repeated calls and viewport changes cannot compound
+     * the previous offset.
+     */
+    var contentsTop = contents.getBoundingClientRect().top;
     var candidates = Array.prototype.slice.call(
-      document.querySelectorAll(
-        "#page .sqs-block-image, #page .image-block, #page .sqs-gallery-block"
-      )
-    ).filter(function (candidate) {
-      var rect = candidate.getBoundingClientRect();
+      document.querySelectorAll("#page .sqs-block-image img")
+    ).filter(function (image) {
+      var rect = image.getBoundingClientRect();
 
       return (
         rect.width > 0 &&
-        rect.bottom <= contentsRect.top + 20
+        rect.height > 0 &&
+        rect.bottom <= contentsTop + 20
       );
     });
 
-    if (!candidates.length) {
+    if (!candidates.length || !contents.parentElement) {
       return;
     }
 
-    var leadPhoto = candidates.reduce(function (widest, candidate) {
-      return candidate.getBoundingClientRect().width >
+    var leadPhoto = candidates.reduce(function (widest, image) {
+      return image.getBoundingClientRect().width >
         widest.getBoundingClientRect().width
-        ? candidate
+        ? image
         : widest;
     });
 
     var photoRect = leadPhoto.getBoundingClientRect();
-    var currentRect = contents.getBoundingClientRect();
-
-    if (photoRect.width <= currentRect.width + 8) {
-      return;
-    }
+    var originRect = contents.parentElement.getBoundingClientRect();
+    var offset = photoRect.left - originRect.left;
 
     contents.style.setProperty(
       "--rlp-toc-photo-width",
-      Math.round(photoRect.width) + "px"
+      Math.round(photoRect.width * 100) / 100 + "px"
     );
     contents.style.setProperty(
       "--rlp-toc-photo-offset",
-      Math.round(photoRect.left - currentRect.left) + "px"
+      Math.round(offset * 100) / 100 + "px"
     );
     contents.classList.add("rlp-toc-photo-width");
   }
