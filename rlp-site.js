@@ -249,6 +249,67 @@
     });
   }
 
+
+
+  function fitFloridaContentsToLeadPhoto() {
+    var contents = document.querySelector(".rlp-article-toc");
+
+    if (!contents || window.matchMedia("(max-width: 640px)").matches) {
+      if (contents) {
+        contents.classList.remove("rlp-toc-photo-width");
+        contents.style.removeProperty("--rlp-toc-photo-width");
+        contents.style.removeProperty("--rlp-toc-photo-offset");
+      }
+      return;
+    }
+
+    var contentsRect = contents.getBoundingClientRect();
+    var candidates = Array.prototype.slice.call(
+      document.querySelectorAll(
+        "#page .sqs-block-image, #page .image-block, #page .sqs-gallery-block"
+      )
+    ).filter(function (candidate) {
+      var rect = candidate.getBoundingClientRect();
+
+      return (
+        rect.width > 0 &&
+        rect.bottom <= contentsRect.top + window.pageYOffset + 20
+      );
+    });
+
+    if (!candidates.length) {
+      return;
+    }
+
+    var leadPhoto = candidates.reduce(function (widest, candidate) {
+      return candidate.getBoundingClientRect().width >
+        widest.getBoundingClientRect().width
+        ? candidate
+        : widest;
+    });
+
+    var photoRect = leadPhoto.getBoundingClientRect();
+    var currentRect = contents.getBoundingClientRect();
+
+    if (photoRect.width <= currentRect.width + 8) {
+      return;
+    }
+
+    contents.style.setProperty(
+      "--rlp-toc-photo-width",
+      Math.round(photoRect.width) + "px"
+    );
+    contents.style.setProperty(
+      "--rlp-toc-photo-offset",
+      Math.round(photoRect.left - currentRect.left) + "px"
+    );
+    contents.classList.add("rlp-toc-photo-width");
+  }
+
+  function scheduleFloridaContentsFit() {
+    window.requestAnimationFrame(fitFloridaContentsToLeadPhoto);
+  }
+
   function createFloridaProgress() {
     var pathMatch =
       window.location.pathname.indexOf("florida-y-lavalle-1965") !== -1;
@@ -314,6 +375,7 @@
     markSectionDividers();
     createBiographyContents();
     createFloridaContents();
+    fitFloridaContentsToLeadPhoto();
     createFloridaProgress();
   }
 
@@ -329,5 +391,16 @@
     });
 
     state.mercuryListenerAdded = true;
+  }
+
+  if (!state.articleTocResizeListenerAdded) {
+    window.addEventListener("resize", scheduleFloridaContentsFit, {
+      passive: true
+    });
+    window.addEventListener("load", scheduleFloridaContentsFit, {
+      once: true
+    });
+
+    state.articleTocResizeListenerAdded = true;
   }
 })();
