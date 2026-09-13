@@ -392,3 +392,121 @@ body,
     scroll-behavior: auto;
   }
 }
+
+
+/* =========================================================
+   FLORIDA Y LAVALLE ARTICLE CONTENTS
+   ========================================================= */
+
+.rlp-article-toc {
+  clear: both !important;
+  display: flow-root !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: none !important;
+  overflow: hidden !important;
+  margin: 55px 0 65px;
+  padding: 28px 32px;
+  background: var(--rlp-gray-field);
+  border-left: 4px solid var(--rlp-orange);
+}
+
+.rlp-article-toc summary {
+  position: relative;
+  box-sizing: border-box;
+  min-height: 44px;
+  padding: 8px 8px 8px 20px;
+  color: #222222;
+  font-family: "futura-pt", Futura, "Century Gothic", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: lowercase;
+  cursor: pointer;
+  list-style: none;
+}
+
+.rlp-article-toc summary::-webkit-details-marker {
+  display: none;
+}
+
+.rlp-article-toc summary::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 8px solid var(--rlp-orange);
+  transform: translateY(-50%);
+}
+
+.rlp-article-toc[open] summary::before {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.rlp-article-toc summary:focus-visible,
+.rlp-article-toc a:focus-visible {
+  outline: 3px solid rgba(255, 90, 36, 0.45);
+  outline-offset: 3px;
+}
+
+.rlp-article-toc ol {
+  columns: 2;
+  column-gap: 45px;
+  counter-reset: article-section;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rlp-article-toc li {
+  display: block !important;
+  position: relative;
+  break-inside: avoid;
+  counter-increment: article-section;
+  margin: 0 0 12px;
+  padding-left: 34px;
+  line-height: 1.4;
+}
+
+.rlp-article-toc li::before {
+  content: counter(article-section, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0.12em;
+  width: 24px;
+  color: var(--rlp-orange);
+  font-family: "futura-pt", Futura, "Century Gothic", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.rlp-article-toc a {
+  display: inline !important;
+  color: var(--rlp-ink);
+  font-family: "futura-pt", Futura, "Century Gothic", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.rlp-article-toc a:hover {
+  color: var(--rlp-orange);
+}
+
+#page h2.rlp-article-section {
+  scroll-margin-top: 40px;
+}
+
+@media screen and (max-width: 640px) {
+  .rlp-article-toc {
+    margin: 40px 0 50px;
+    padding: 22px 24px;
+    border-left-width: 3px;
+  }
+
+  .rlp-article-toc ol {
+    columns: 1;
+  }
+}
